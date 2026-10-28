@@ -1,23 +1,23 @@
 package org.example.cardapio;
 
-public class Lanche {
-    private String nome;
+public class Lanche implements ItemCardapio {
+    private String descricao;
     private double preco;
 
-    public Lanche(String nome, double preco){
-        setNome(nome);
+    public Lanche(String descricao, double preco){
+        setDescricao(descricao);
         setPreco(preco);
     }
 
-    public String getNome() {
-        return nome;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setNome(String nome) {
-        if(nome.trim().isEmpty() || nome == null){
+    public void setDescricao(String descricao) {
+        if(descricao.trim().isEmpty() || descricao == null){
             throw new IllegalArgumentException("Nome do lanche mão deve ser nulo nem vazio");
         } else{
-            this.nome = nome;
+            this.descricao = descricao;
         }
     }
 

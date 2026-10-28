@@ -1,12 +1,13 @@
 package org.example.pedido;
 
+import org.example.cardapio.ItemCardapio;
 import org.example.cardapio.Lanche;
 import java.util.ArrayList;
 
 public class Pedido {
     private int numero;
     private String nomeCliente;
-    private ArrayList<Lanche> lanches = new ArrayList<>();
+    private ArrayList<ItemCardapio> itensCardapio = new ArrayList<>();
 
     public Pedido(int numero, String nomeCliente) {
         this.numero = numero;
@@ -33,28 +34,28 @@ public class Pedido {
         }
     }
 
-    public ArrayList<Lanche> getLanches() {
-        return lanches;
+    public ArrayList<ItemCardapio> getLanches() {
+        return itensCardapio;
     }
 
-    public void setLanches(ArrayList<Lanche> lanches) {
-        this.lanches = lanches;
+    public void setLanches(ArrayList<ItemCardapio> lanches) {
+        this.itensCardapio = lanches;
     }
 
-    public void adicionarItem(Lanche lanche){
-        lanches.add(lanche);
+    public void adicionarItem(ItemCardapio itemCardapio){
+        itensCardapio.add(itemCardapio);
     }
 
-    public ArrayList<Lanche> getItens(){
-        return lanches;
+    public ArrayList<ItemCardapio> getItens(){
+        return itensCardapio;
     }
 
     public double calcularTotal(){
 
         double total = 0;
 
-        for (Lanche lanche : lanches){
-            total += lanche.getPreco();
+        for (ItemCardapio itemCardapio : itensCardapio){
+            total += itemCardapio.getPreco();
         }
         return  total;
     }
