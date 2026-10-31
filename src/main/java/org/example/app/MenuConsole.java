@@ -213,7 +213,43 @@ public class MenuConsole {
         return lerNumero();
     }
 
-    public void exibirMensagem(String mensagem){
+    public void exibirPedidoNaoEncontrado() {
+        exibirMensagem("Pedido não encontrado!");
+    }
+
+    public void exibirItemRemovido() {
+        exibirMensagem("Item removido com sucesso!");
+    }
+
+    public void exibirItemInvalido() {
+        exibirMensagem("Item inválido!");
+    }
+
+    public void exibirPedidoCancelado() {
+        exibirMensagem("Pedido cancelado!");
+    }
+
+    public void exibirVoltando() {
+        exibirMensagem("Voltando ao menu principal...");
+    }
+
+    public void exibirOpcaoInvalida() {
+        exibirMensagem("Opção inválida!");
+    }
+
+    public void exibirPedidoPago() {
+        exibirMensagem("Pedido pago!");
+    }
+
+    public void exibirPedidoJaPago() {
+        exibirMensagem("Este pedido já foi pago!");
+    }
+
+    public void exibirEncerramento() {
+        exibirMensagem("Encerrando Sistema...");
+    }
+
+    private void exibirMensagem(String mensagem){
         System.out.println(mensagem);
     }
 

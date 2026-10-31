@@ -62,7 +62,6 @@ public class RestauranteFacade {
         return gerenciadorPedidos.calcularTotalGorjetas();
     }
 
-    // Devolve false se o pedido já estava pago.
     public boolean pagarPedido(Pedido pedido){
         double valor = pedido.calcularTotal() + pedido.getGorjeta();
         return caixa.registrar(new Transacao(pedido.getNumero(), valor));

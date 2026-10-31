@@ -57,7 +57,7 @@ public class Main {
                    pedido = restaurante.getPedido(numPedido);
 
                     if (pedido == null) {
-                        menu.exibirMensagem("Pedido não encontrado!");
+                        menu.exibirPedidoNaoEncontrado();
                     } else {
                        menu.exibirPedido(pedido);
 
@@ -86,10 +86,10 @@ public class Main {
 
                                         restaurante.removerLanche(pedido, numeroItem - 1);
 
-                                        menu.exibirMensagem("Item removido com sucesso!");
+                                        menu.exibirItemRemovido();
 
                                     } catch (IllegalArgumentException e) {
-                                        menu.exibirMensagem(e.getMessage());
+                                        menu.exibirItemInvalido();
                                     }
                                     break;
 
@@ -98,17 +98,17 @@ public class Main {
 
                                     if (menu.confirmaCancelamento(numPedido)){
                                         restaurante.cancelarPedido(numPedido);
-                                        menu.exibirMensagem("Pedido cancelado!");
+                                        menu.exibirPedidoCancelado();
                                         opcaoAlterar = 0;
                                     }
                                     break;
 
                                 case 0:
                                     // Voltar
-                                    menu.exibirMensagem("Voltando ao menu principal...");
+                                    menu.exibirVoltando();
                                     break;
                                 default:
-                                    menu.exibirMensagem("Opção inválida!");
+                                    menu.exibirOpcaoInvalida();
                                     break;
                             }
 
@@ -122,19 +122,19 @@ public class Main {
                     Pedido pedidoPagar = restaurante.getPedido(menu.getPedido());
 
                     if (pedidoPagar == null) {
-                        menu.exibirMensagem("Pedido não encontrado!");
+                        menu.exibirPedidoNaoEncontrado();
                     } else if (restaurante.pagarPedido(pedidoPagar)) {
-                        menu.exibirMensagem("Pedido pago!");
+                        menu.exibirPedidoPago();
                     } else {
-                        menu.exibirMensagem("Este pedido já foi pago!");
+                        menu.exibirPedidoJaPago();
                     }
                     break;
 
                 case 0:
-                    menu.exibirMensagem("Encerrando Sistema...");
+                    menu.exibirEncerramento();
                     break;
                 default:
-                    menu.exibirMensagem("Opção inválida!");
+                    menu.exibirOpcaoInvalida();
                     break;
             }
         }
