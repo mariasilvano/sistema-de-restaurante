@@ -2,7 +2,7 @@
 
 Projeto 1 do bootcamp #ElasTech — sistema de console em Java para um restaurante: cardápio, pedidos, personalização dos lanches e fechamento do dia.
 
-**Vídeo de demonstração:** [COLE AQUI O LINK]
+**Vídeo de demonstração:** [https://www.youtube.com/watch?v=tg23OvRjwPA]
 
 ## O que foi feito
 
